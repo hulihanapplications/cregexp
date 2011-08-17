@@ -13,7 +13,7 @@ Cregexp.ip  	# /^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0
 Cregexp.hex 	# /^#?([a-f0-9]{6}|[a-f0-9]{3})$/
 ```
 
-## Matching 
+### Matching 
 
 ```ruby
 Cregexp.match("http://www.example.com", :url) # true

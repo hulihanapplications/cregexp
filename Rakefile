@@ -17,10 +17,10 @@ Jeweler::Tasks.new do |gem|
   gem.name = "cregexp"
   gem.homepage = "http://github.com/hulihanapplications/cregexp"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{Commonly Used Regular Expressions}
+  gem.description = %Q{Cregexp is a library of commonly used regular expressions, written in Ruby.}
   gem.email = "dave@hulihanapplications.com"
-  gem.authors = ["Hulihan Applications"]
+  gem.authors = ["Hulihan Applications", "Dave Hulihan"]
   # dependencies defined in Gemfile
 end
 Jeweler::RubygemsDotOrgTasks.new
