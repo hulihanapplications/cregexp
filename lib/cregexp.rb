@@ -1,4 +1,33 @@
-module Cregexp
-  URL = /(^$)|(^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/.*)?$)/ix
-  EMAIL = /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i
+class Cregexp	
+  def self.url(options = {})
+  	/(^$)|(^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/.*)?$)/ix
+  end 
+  
+  def self.email(options = {})
+  	/\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i
+  end 
+  
+  # Slug 
+  # my-title-here passes
+  # my_title_here fails
+  def self.slug(options = {}) 
+  	/^[a-z0-9-]+$/  
+  end 
+  
+  # IP Address
+  def self.ip(options = {})
+  	/^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/  
+  end
+  
+  # Hex Value
+  # #a3c113 passes
+  # #4d82h4 failes(contains h)
+  def self.hex(options = {})
+  	/^#?([a-f0-9]{6}|[a-f0-9]{3})$/
+  end   
+  
+  # Cregexp.match("http://www.google.com", :url) => true 
+  def self.match(string, matcher, options = {}) 
+  	(string =~ send(matcher.to_sym)) == 0
+  end
 end 
