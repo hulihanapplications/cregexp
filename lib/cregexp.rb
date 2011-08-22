@@ -26,8 +26,14 @@ class Cregexp
   	/^#?([a-f0-9]{6}|[a-f0-9]{3})$/
   end   
   
+  # Image 
+  # Checke if file extension is of a valid image type
+  def self.image
+    /.png|.jpg|.jpeg|.gif|.bmp|.tiff|.PNG|.JPG|.JPEG|.GIF|.BMP|.TIFF$/
+  end
+  
   # Cregexp.match("http://www.google.com", :url) => true 
   def self.match(string, matcher, options = {}) 
-  	(string =~ send(matcher.to_sym)) == 0
+  	!(string =~ send(matcher.to_sym)).nil?
   end
 end 

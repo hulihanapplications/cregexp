@@ -30,12 +30,25 @@ describe Cregexp do
 	end	
 	
 	describe "match" do
-		it "should return true with url matcher and valid url" do
-			described_class.match("http://www.google.com", :url).should == true
-		end
+	  describe "url" do 
+      it "should return true with valid url" do
+        described_class.match("http://www.google.com", :url).should == true
+      end
+  
+      it "should return false with invalid url" do
+        described_class.match("httpz://invalid", :url).should == false
+      end 	    
+	  end
+		
+		describe "image" do
+      it "should return true with valid filename" do
+        described_class.match("image.png", :image).should == true
+      end
 
-		it "should return false with url matcher and invalid url" do
-			described_class.match("httpz://invalid", :url).should == false
-		end		
+      it "should return false with invalid filename" do
+        described_class.match("image.jperg", :image).should == false
+      end        		  
+		end
+			
 	end
 end  
