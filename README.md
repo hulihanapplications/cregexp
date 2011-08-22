@@ -36,7 +36,7 @@ That's It! Now Use it in a model for easy validations:
 
 
 ```ruby
-class PluginImage < ActiveRecord::Base
+class Image < ActiveRecord::Base
   validates_format_of :file, :format => Cregexp.image
   
   ...
