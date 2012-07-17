@@ -18,7 +18,7 @@ Cregexp.image			 # /.png|.jpg|.jpeg|.gif|.bmp|.tiff|.PNG|.JPG|.JPEG|.GIF|.BMP|.T
 
 ```ruby
 Cregexp.match("http://www.example.com", :url) # true
-Cregexp.match("http://invalid", :url) # => false
+Cregexp.match("http://invalid", :url) # false
 
 Cregexp.match("192.168.0.1", :ip) # true
 Cregexp.match("256.255.255.255", :ip) # false
